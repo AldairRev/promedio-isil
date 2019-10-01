@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:800&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Muli', sans-serif;
+    background-image: url(../img/bg-isil.jpg);
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* bar style */
+#bar {
+    height: 60px;
+    background: #00AEEF99;
+    animation-name: showBar;
+    animation-duration: 1s;
+}
+
+#bar div {
+    float: left;
+    height: 100%;
+    line-height: 60px;
+    text-align: center;
+    opacity: 1;
+    transition: .5s;
+}
+
+#bar .logo{
+    width: 25%;
+}
+#bar .logo img {
+    height: 75%;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+#bar .tittle {
+    width: 50%;
+}
+
+#bar .tittle h1 {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    color: white;
+    font-size: 22px;
+    animation-name: showTittle;
+    animation-duration: 2s;
+}
+
+#bar .user {
+    width: 25%;
+}
+
+#bar .user img {
+    height: 25%;
+}
+#bar .user p {
+    display: inline;
+    padding-left: 5px;
+    color: white;
+    font-size: 18px;
+    animation-name: showUserName;
+    animation-duration: 1.5s;
+}
+/*body style*/
+#window {
+    height: calc(100% - 60px);
+    position: relative;
+    text-align: center;
+}
+
+#box {
+	width: 360px;
+	background: #fffd;
+	height: 400px;
+	padding: 60px 40px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+    transform: translate(-50%,-50%);
+    animation-name: showBox;
+    animation-duration: 1.5s;
+}
+
+.txtb {
+    border: 2px solid #FDBF10;
+	position: relative;
+	margin:26px 50px;
+}
+
+.txtb input {
+    font-size: 15px;
+	color: #333;
+	border: none;
+	width: 100%;
+	outline: none;
+	background: none;
+	padding: 0 5px;
+    height: 30px; 
+    font-family: 'Muli', sans-serif;  
+}
+
+.txtb span::before {
+	content: attr(data-placeholder);
+	position: absolute;
+	top: -13px;
+	left: 5px;
+	color: #FDBF10;
+	transform: translateY(-50%);
+	z-index: -1;
+    transition: .5s;
+    font-size: 14px;
+}
+
+.btn {
+    display: inline-block;
+    text-align: center;
+	width: 60%;
+    height: 40px;
+    margin-top: 5px;
+	border: solid 2px #ED4936;
+	background: none;
+	color: #ED4936;
+	cursor: pointer;
+    transition: 0.5s;
+    font-family: 'Muli', sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background: #ED4936;
+    color: white;
+}
+
+/*Animation*/
+@keyframes showBar {
+    0% {
+        height: 0px;
+    }
+
+    100% {
+        height: 60px;
+    }
+}
+
+@keyframes showTittle{
+    0% {
+        font-size: 0px;
+    }
+    
+    100% {
+        font-size: 22px;
+    }
+}
+
+@keyframes showUserName{
+    0% {
+        font-size: 0px;
+    }
+    
+    100% {
+        font-size: 18px;
+    }
+}
+
+@keyframes showBox{
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/*removing spin from input number*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+/* Responsive */
+@media only screen and (max-width: 800px) {
+    #bar .tittle {
+        display: none;
+    }
+    #bar .logo {
+        width: 50%;
+    }
+    #bar .user {
+        width: 50%;
+    }
+}
